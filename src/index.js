@@ -74,11 +74,12 @@ class AddPost extends React.Component {
 
 class Posts extends React.Component {
   render() {
+    const uuid = require("uuid/v4");
     return (
       <div>
         {this.props.posts.length === 0
-          ? "No posts in feed"
-          : this.props.posts.map(posts => <p>{posts}</p>)}
+          ? "No posts in feed!"
+          : this.props.posts.map(posts => <p key={uuid()}>{posts}</p>)}
       </div>
     );
   }
